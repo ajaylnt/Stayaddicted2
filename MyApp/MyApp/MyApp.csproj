@@ -1,0 +1,873 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{05AF1253-CC89-4E63-98AA-A888AA9F46B4}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyApp</RootNamespace>
+    <AssemblyName>MyApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.bootstrap, Version=4.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.4.1.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="blog-grid.html" />
+    <Content Include="blog-single.html" />
+    <Content Include="bootstrap-4.0.0-dist\css\bootstrap-grid.css" />
+    <Content Include="bootstrap-4.0.0-dist\css\bootstrap-grid.min.css" />
+    <Content Include="bootstrap-4.0.0-dist\css\bootstrap-reboot.css" />
+    <Content Include="bootstrap-4.0.0-dist\css\bootstrap-reboot.min.css" />
+    <Content Include="bootstrap-4.0.0-dist\css\bootstrap.css" />
+    <Content Include="bootstrap-4.0.0-dist\js\bootstrap.bundle.js" />
+    <Content Include="bootstrap-4.0.0-dist\js\bootstrap.bundle.min.js" />
+    <Content Include="bootstrap-4.0.0-dist\js\bootstrap.js" />
+    <Content Include="bootstrap-4.0.0-dist\js\bootstrap.min.js" />
+    <Content Include="Contact.aspx" />
+    <Content Include="contactform\contactform.js" />
+    <Content Include="contactform\Readme.txt" />
+    <Content Include="Content\animate.css" />
+    <Content Include="Content\animsition.css" />
+    <Content Include="Content\animsition.min.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\daterangepicker.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\fontawesome-webfont.svg" />
+    <Content Include="Content\hamburgers.css" />
+    <Content Include="Content\hamburgers.min.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\perfect-scrollbar.css" />
+    <Content Include="Content\select2.css" />
+    <Content Include="Content\select2.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\util.css" />
+    <Content Include="css\._bootstrap.css" />
+    <Content Include="css\._font-awesome.min.css" />
+    <Content Include="css\._linearicons.css" />
+    <Content Include="css\._magnific-popup.css" />
+    <Content Include="css\._main.css" />
+    <Content Include="css\._nice-select.css" />
+    <Content Include="css\._owl.carousel.css" />
+    <Content Include="css\blog.css" />
+    <Content Include="css\half-slider.css" />
+    <Content Include="css\hover.min.css" />
+    <Content Include="css\ionicons.css" />
+    <Content Include="css\ionicons.min.css" />
+    <Content Include="css\magnific-popup.css" />
+    <Content Include="css\owl.carousel.css" />
+    <Content Include="css\owl.carousel.min.css" />
+    <Content Include="css\owl.theme.default.css" />
+    <Content Include="css\owl.theme.default.min.css" />
+    <Content Include="css\owl.theme.green.css" />
+    <Content Include="css\owl.theme.green.min.css" />
+    <Content Include="css\pics\bootstrap.css" />
+    <Content Include="css\pics\font-awesome.css" />
+    <Content Include="css\pics\owl.carousel.css" />
+    <Content Include="css\pics\simplelightbox.min.css" />
+    <Content Include="css\pics\slider.css" />
+    <Content Include="css\pics\style.css" />
+    <Content Include="css\responsive.css" />
+    <Content Include="css\scss-files.txt" />
+    <Content Include="css\signup\material-design-iconic-font.css" />
+    <Content Include="css\signup\material-design-iconic-font.min.css" />
+    <Content Include="css\signup\style.css" />
+    <Content Include="css\style-green.css" />
+    <Content Include="css\style-orange.css" />
+    <Content Include="css\style-purple.css" />
+    <Content Include="css\style-red.css" />
+    <Content Include="css\style-sky-blue.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\style1.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\._fontawesome-webfont.svg" />
+    <Content Include="fonts\._Linearicons-Free.svg" />
+    <Content Include="fonts\pics\fonts\fontawesome-webfont.svg" />
+    <Content Include="Gallery.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="gulpfile.js" />
+    <Content Include="Images\1.jpg" />
+    <Content Include="Images\2.jpg" />
+    <Content Include="Images\50632870_2105556822874741_2512293218024947712_o.jpg" />
+    <Content Include="Images\8629-hyper-sport-hd-wallpaper_28222.jpeg" />
+    <Content Include="Images\9cb64716c7d12f5ccf6c372f6addadbd.jpg" />
+    <Content Include="Images\aabe146a0e7f86ddeb61e3e6023eb5f8.jpg" />
+    <Content Include="Images\ajax-loader.gif" />
+    <Content Include="Images\avatar.jpg" />
+    <Content Include="Images\bg-01.jpg" />
+    <Content Include="Images\blog-post-1.jpg" />
+    <Content Include="Images\blog-post-2.jpg" />
+    <Content Include="Images\blog-post-3.jpg" />
+    <Content Include="Images\blog-post-big.jpg" />
+    <Content Include="Images\favicon.ico" />
+    <Content Include="Images\favicon.png" />
+    <Content Include="Images\Ferrari-599-yellow-supercar_1920x1080.jpg" />
+    <Content Include="Images\home-bg.jpg" />
+    <Content Include="Images\icon-google.png" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\map-marker.png" />
+    <Content Include="Images\me.jpg" />
+    <Content Include="Images\owl.video.play.png" />
+    <Content Include="Images\pics\1.jpg" />
+    <Content Include="Images\pics\2.jpg" />
+    <Content Include="Images\pics\3.jpg" />
+    <Content Include="Images\pics\a.jpg" />
+    <Content Include="Images\pics\a1.jpg" />
+    <Content Include="Images\pics\a2.jpg" />
+    <Content Include="Images\pics\a3.jpg" />
+    <Content Include="Images\pics\a4.jpg" />
+    <Content Include="Images\pics\close.png" />
+    <Content Include="Images\pics\img1.jpg" />
+    <Content Include="Images\pics\img2.jpg" />
+    <Content Include="Images\pics\img3.jpg" />
+    <Content Include="Images\pics\img4.jpg" />
+    <Content Include="Images\pics\img5.jpg" />
+    <Content Include="Images\pics\img6.jpg" />
+    <Content Include="Images\pics\img7.jpg" />
+    <Content Include="Images\pics\img8.jpg" />
+    <Content Include="Images\pics\left.png" />
+    <Content Include="Images\pics\move-up.png" />
+    <Content Include="Images\pics\right.png" />
+    <Content Include="Images\pics\stat.jpg" />
+    <Content Include="Images\pics\t1.jpg" />
+    <Content Include="Images\pics\t2.jpg" />
+    <Content Include="Images\pics\t3.jpg" />
+    <Content Include="Images\pics\t4.jpg" />
+    <Content Include="Images\portfolio\1.jpg" />
+    <Content Include="Images\portfolio\2.jpg" />
+    <Content Include="Images\portfolio\3.jpg" />
+    <Content Include="Images\portfolio\4.jpg" />
+    <Content Include="Images\portfolio\5.jpg" />
+    <Content Include="Images\portfolio\6.jpg" />
+    <Content Include="Images\signup\checked.gif" />
+    <Content Include="Images\signup\signup-bg.jpg" />
+    <Content Include="Images\signup\unchecked.gif" />
+    <Content Include="Images\Stayaddicted2-logo.png" />
+    <Content Include="Images\stayaddicted2Icon.png" />
+    <Content Include="Images\symbol-01.png" />
+    <Content Include="Images\wallpaper2you_325598.jpg" />
+    <Content Include="img\._about-img.jpg" />
+    <Content Include="img\._b1.jpg" />
+    <Content Include="img\._b2.jpg" />
+    <Content Include="img\._b3.jpg" />
+    <Content Include="img\._c1.jpg" />
+    <Content Include="img\._c2.jpg" />
+    <Content Include="img\._c3.jpg" />
+    <Content Include="img\._c4.jpg" />
+    <Content Include="img\._header-img.png" />
+    <Content Include="img\._logo.png" />
+    <Content Include="img\._user.png" />
+    <Content Include="Images\aj.jpg" />
+    <Content Include="img\apple-touch-icon.png" />
+    <Content Include="img\counters-bg.jpg" />
+    <Content Include="img\favicon.png" />
+    <Content Include="img\intro-bg - Copy.jpg" />
+    <Content Include="img\intro-bg.jpg" />
+    <Content Include="img\overlay-bg.jpg" />
+    <Content Include="img\post-1.jpg" />
+    <Content Include="img\post-2.jpg" />
+    <Content Include="img\post-3.jpg" />
+    <Content Include="img\testimonial-2.jpg" />
+    <Content Include="img\testimonial-4.jpg" />
+    <Content Include="img\work-1.jpg" />
+    <Content Include="img\work-2.jpg" />
+    <Content Include="img\work-3.jpg" />
+    <Content Include="img\work-4.jpg" />
+    <Content Include="img\work-5.jpg" />
+    <Content Include="img\work-6.jpg" />
+    <Content Include="home.html" />
+    <Content Include="js\pics\bootstrap.js" />
+    <Content Include="js\pics\easing.js" />
+    <Content Include="js\pics\jquery-2.2.3.min.js" />
+    <Content Include="js\pics\main.js" />
+    <Content Include="js\pics\move-top.js" />
+    <Content Include="js\pics\numscroller-1.0.js" />
+    <Content Include="js\pics\owl.carousel.js" />
+    <Content Include="js\pics\simple-lightbox.min.js" />
+    <Content Include="js\pics\SmoothScroll.min.js" />
+    <Content Include="js\pics\snap.svg-min.js" />
+    <Content Include="pics.html" />
+    <Content Include="js\._countdown.js" />
+    <Content Include="js\._jquery.ajaxchimp.min.js" />
+    <Content Include="js\._jquery.counterup.min.js" />
+    <Content Include="js\._jquery.magnific-popup.min.js" />
+    <Content Include="js\._jquery.nice-select.min.js" />
+    <Content Include="js\._jquery.sticky.js" />
+    <Content Include="js\._main.js" />
+    <Content Include="js\._owl.carousel.min.js" />
+    <Content Include="js\._parallax.min.js" />
+    <Content Include="js\._waypoints.min.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\vendor\._bootstrap.min.js" />
+    <Content Include="js\vendor\._jquery-2.2.4.min.js" />
+    <Content Include="lib\animate\animate.css" />
+    <Content Include="lib\animate\animate.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\js\bootstrap.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="lib\counterup\jquery.counterup.js" />
+    <Content Include="lib\counterup\jquery.counterup.min.js" />
+    <Content Include="lib\counterup\jquery.waypoints.min.js" />
+    <Content Include="lib\easing\easing.js" />
+    <Content Include="lib\easing\easing.min.js" />
+    <Content Include="lib\font-awesome\css\font-awesome.css" />
+    <Content Include="lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="lib\ionicons\css\ionicons.css" />
+    <Content Include="lib\ionicons\css\ionicons.min.css" />
+    <Content Include="lib\ionicons\fonts\ionicons.svg" />
+    <Content Include="lib\jquery\jquery-migrate.min.js" />
+    <Content Include="lib\jquery\jquery.min.js" />
+    <Content Include="lib\lightbox\css\lightbox.css" />
+    <Content Include="lib\lightbox\css\lightbox.min.css" />
+    <Content Include="lib\lightbox\images\close.png" />
+    <Content Include="lib\lightbox\images\loading.gif" />
+    <Content Include="lib\lightbox\images\next.png" />
+    <Content Include="lib\lightbox\images\prev.png" />
+    <Content Include="lib\lightbox\js\lightbox.js" />
+    <Content Include="lib\lightbox\js\lightbox.min.js" />
+    <Content Include="lib\lightbox\links.php" />
+    <Content Include="lib\owlcarousel\assets\ajax-loader.gif" />
+    <Content Include="lib\owlcarousel\assets\owl.carousel.css" />
+    <Content Include="lib\owlcarousel\assets\owl.carousel.min.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.default.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.default.min.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.green.css" />
+    <Content Include="lib\owlcarousel\assets\owl.theme.green.min.css" />
+    <Content Include="lib\owlcarousel\assets\owl.video.play.png" />
+    <Content Include="lib\owlcarousel\owl.carousel.js" />
+    <Content Include="lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="lib\popper\popper.min.js" />
+    <Content Include="lib\typed\typed.js" />
+    <Content Include="lib\typed\typed.min.js" />
+    <Content Include="main.js" />
+    <Content Include="medical-doc\._index.html" />
+    <Content Include="medical-doc\css\._font-awesome.min.css" />
+    <Content Include="medical-doc\css\._main.css" />
+    <Content Include="medical-doc\css\._normalize.min.css" />
+    <Content Include="medical-doc\fonts\._fontawesome-webfont.svg" />
+    <Content Include="medical-doc\img\._logo.png" />
+    <Content Include="medical-doc\js\._custom.js" />
+    <Content Include="medical-doc\js\._jquery-1.11.0.min.js" />
+    <Content Include="medical-doc\js\._jquery.nav.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shAutoloader.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushAppleScript.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushAS3.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushBash.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushColdFusion.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushCpp.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushCSharp.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushCss.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushDelphi.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushDiff.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushErlang.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushGroovy.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushJava.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushJavaFX.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushJScript.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushPerl.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushPhp.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushPlain.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushPowerShell.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushPython.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushRuby.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushSass.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushScala.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushSql.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushVb.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shBrushXml.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shCore.js" />
+    <Content Include="medical-doc\syntax-highlighter\scripts\._shLegacy.js" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shCore.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shCoreDefault.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shCoreDjango.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shCoreEclipse.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shCoreEmacs.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shCoreFadeToGrey.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shCoreMDUltra.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shCoreMidnight.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shCoreRDark.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shThemeDefault.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shThemeDjango.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shThemeEclipse.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shThemeEmacs.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shThemeFadeToGrey.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shThemeMDUltra.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shThemeMidnight.css" />
+    <Content Include="medical-doc\syntax-highlighter\styles\._shThemeRDark.css" />
+    <Content Include="Movies.aspx" />
+    <Content Include="Music.aspx" />
+    <Content Include="Pictures.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Scripts\animsition.js" />
+    <Content Include="Scripts\animsition.min.js" />
+    <Content Include="Scripts\countdowntime.js" />
+    <Content Include="Scripts\daterangepicker.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\perfect-scrollbar.min.js" />
+    <Content Include="Scripts\select2.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="Scripts\tooltip.js" />
+    <Content Include="login.aspx" />
+    <Content Include="test.aspx" />
+    <Content Include="About.html" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\bootstrap\js\isotope.pkgd.min.js" />
+    <Content Include="vendor\bootstrap\js\magnific-popup.min.js" />
+    <Content Include="vendor\bootstrap\js\owl.carousel.min.js" />
+    <Content Include="vendor\bootstrap\js\typed.js" />
+    <Content Include="vendor\jquery\jquery-migrate.min.js" />
+    <Content Include="vendor\jquery\jquery.js" />
+    <Content Include="vendor\jquery\jquery.min.js" />
+    <Content Include="vendor\jquery\jquery.slim.js" />
+    <Content Include="vendor\jquery\jquery.slim.min.js" />
+    <Content Include="vendor\signup\jquery-ui.min.js" />
+    <Content Include="vendor\signup\jquery.min.js" />
+    <Content Include="vendor\signup\main.js" />
+    <Content Include="welcome.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="welcome.html" />
+    <Content Include="Content\fontawesome-webfont.eot" />
+    <Content Include="Content\fontawesome-webfont.ttf" />
+    <Content Include="Content\fontawesome-webfont.woff" />
+    <Content Include="Content\fontawesome-webfont.woff2" />
+    <Content Include="Content\FontAwesome.otf" />
+    <Content Include="Content\animated.less" />
+    <Content Include="Content\bordered-pulled.less" />
+    <Content Include="Content\core.less" />
+    <Content Include="Content\fixed-width.less" />
+    <Content Include="Content\font-awesome.less" />
+    <Content Include="Content\icons.less" />
+    <Content Include="Content\larger.less" />
+    <Content Include="Content\list.less" />
+    <Content Include="Content\mixins.less" />
+    <Content Include="Content\path.less" />
+    <Content Include="Content\rotated-flipped.less" />
+    <Content Include="Content\screen-reader.less" />
+    <Content Include="Content\stacked.less" />
+    <Content Include="Content\variables.less" />
+    <Content Include="Content\font-awesome.scss" />
+    <Content Include="Content\_animated.scss" />
+    <Content Include="Content\_bordered-pulled.scss" />
+    <Content Include="Content\_core.scss" />
+    <Content Include="Content\_fixed-width.scss" />
+    <Content Include="Content\_icons.scss" />
+    <Content Include="Content\_larger.scss" />
+    <Content Include="Content\_list.scss" />
+    <Content Include="Content\_mixins.scss" />
+    <Content Include="Content\_path.scss" />
+    <Content Include="Content\_rotated-flipped.scss" />
+    <Content Include="Content\_screen-reader.scss" />
+    <Content Include="Content\_stacked.scss" />
+    <Content Include="Content\_variables.scss" />
+    <Content Include="bootstrap-4.0.0-dist\css\bootstrap-grid.css.map" />
+    <Content Include="bootstrap-4.0.0-dist\css\bootstrap-grid.min.css.map" />
+    <Content Include="bootstrap-4.0.0-dist\css\bootstrap-reboot.css.map" />
+    <Content Include="bootstrap-4.0.0-dist\css\bootstrap-reboot.min.css.map" />
+    <Content Include="bootstrap-4.0.0-dist\js\bootstrap.bundle.js.map" />
+    <Content Include="bootstrap-4.0.0-dist\js\bootstrap.bundle.min.js.map" />
+    <Content Include="bootstrap-4.0.0-dist\js\bootstrap.js.map" />
+    <Content Include="bootstrap-4.0.0-dist\js\bootstrap.min.js.map" />
+    <Content Include="LICENSE" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="README.md" />
+    <Content Include="css\._.DS_Store" />
+    <Content Include="fonts\._.DS_Store" />
+    <Content Include="fonts\._fontawesome-webfont.eot" />
+    <Content Include="fonts\._fontawesome-webfont.ttf" />
+    <Content Include="fonts\._fontawesome-webfont.woff" />
+    <Content Include="fonts\._fontawesome-webfont.woff2" />
+    <Content Include="fonts\._FontAwesome.otf" />
+    <Content Include="fonts\._Linearicons-Free.eot" />
+    <Content Include="fonts\._Linearicons-Free.ttf" />
+    <Content Include="fonts\._Linearicons-Free.woff" />
+    <Content Include="fonts\._Linearicons-Free.woff2" />
+    <Content Include="img\._.DS_Store" />
+    <Content Include="js\._.DS_Store" />
+    <Content Include="js\._vendor" />
+    <Content Include="medical-doc\._.DS_Store" />
+    <Content Include="medical-doc\._css" />
+    <Content Include="medical-doc\._fonts" />
+    <Content Include="medical-doc\._img" />
+    <Content Include="medical-doc\._js" />
+    <Content Include="medical-doc\._syntax-highlighter" />
+    <Content Include="medical-doc\css\._.DS_Store" />
+    <Content Include="medical-doc\fonts\._.DS_Store" />
+    <Content Include="medical-doc\fonts\._fontawesome-webfont.eot" />
+    <Content Include="medical-doc\fonts\._fontawesome-webfont.ttf" />
+    <Content Include="medical-doc\fonts\._fontawesome-webfont.woff" />
+    <Content Include="medical-doc\fonts\._FontAwesome.otf" />
+    <Content Include="medical-doc\img\._.DS_Store" />
+    <Content Include="medical-doc\js\._.DS_Store" />
+    <Content Include="medical-doc\syntax-highlighter\._.DS_Store" />
+    <Content Include="medical-doc\syntax-highlighter\._scripts" />
+    <Content Include="medical-doc\syntax-highlighter\._styles" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="lib\ionicons\fonts\ionicons.eot" />
+    <Content Include="lib\ionicons\fonts\ionicons.ttf" />
+    <Content Include="lib\ionicons\fonts\ionicons.woff" />
+    <Content Include="lib\owlcarousel\LICENSE" />
+    <Content Include="lib\popper\popper.min.js.map.json" />
+    <Content Include="lib\typed\typed.min.js.map" />
+    <Content Include="fonts\pics\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\pics\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\pics\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\pics\fonts\FontAwesome.otf" />
+    <Content Include="fonts\pics\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\pics\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Properties\PublishProfiles\file.pubxml" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Gallery.aspx.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Gallery.aspx.designer.cs">
+      <DependentUpon>Gallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Movies.aspx.cs">
+      <DependentUpon>Movies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Movies.aspx.designer.cs">
+      <DependentUpon>Movies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Music.aspx.cs">
+      <DependentUpon>Music.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Music.aspx.designer.cs">
+      <DependentUpon>Music.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pictures.aspx.cs">
+      <DependentUpon>Pictures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pictures.aspx.designer.cs">
+      <DependentUpon>Pictures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="welcome.aspx.cs">
+      <DependentUpon>welcome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="welcome.aspx.designer.cs">
+      <DependentUpon>welcome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="vendor\jquery\jquery.min.map" />
+    <Content Include="vendor\jquery\jquery.slim.min.map" />
+    <Content Include="scss\._.DS_Store" />
+    <Content Include="scss\._bootstrap" />
+    <Content Include="scss\._bootstrap.scss" />
+    <Content Include="scss\._main.scss" />
+    <Content Include="scss\._theme" />
+    <Content Include="scss\bootstrap\._.DS_Store" />
+    <Content Include="scss\bootstrap\._mixins" />
+    <Content Include="scss\bootstrap\._utilities" />
+    <Content Include="scss\bootstrap\.__alert.scss" />
+    <Content Include="scss\bootstrap\.__badge.scss" />
+    <Content Include="scss\bootstrap\.__breadcrumb.scss" />
+    <Content Include="scss\bootstrap\.__button-group.scss" />
+    <Content Include="scss\bootstrap\.__buttons.scss" />
+    <Content Include="scss\bootstrap\.__card.scss" />
+    <Content Include="scss\bootstrap\.__carousel.scss" />
+    <Content Include="scss\bootstrap\.__close.scss" />
+    <Content Include="scss\bootstrap\.__code.scss" />
+    <Content Include="scss\bootstrap\.__custom-forms.scss" />
+    <Content Include="scss\bootstrap\.__dropdown.scss" />
+    <Content Include="scss\bootstrap\.__forms.scss" />
+    <Content Include="scss\bootstrap\.__functions.scss" />
+    <Content Include="scss\bootstrap\.__grid.scss" />
+    <Content Include="scss\bootstrap\.__images.scss" />
+    <Content Include="scss\bootstrap\.__input-group.scss" />
+    <Content Include="scss\bootstrap\.__jumbotron.scss" />
+    <Content Include="scss\bootstrap\.__list-group.scss" />
+    <Content Include="scss\bootstrap\.__media.scss" />
+    <Content Include="scss\bootstrap\.__mixins.scss" />
+    <Content Include="scss\bootstrap\.__modal.scss" />
+    <Content Include="scss\bootstrap\.__nav.scss" />
+    <Content Include="scss\bootstrap\.__navbar.scss" />
+    <Content Include="scss\bootstrap\.__pagination.scss" />
+    <Content Include="scss\bootstrap\.__popover.scss" />
+    <Content Include="scss\bootstrap\.__print.scss" />
+    <Content Include="scss\bootstrap\.__progress.scss" />
+    <Content Include="scss\bootstrap\.__reboot.scss" />
+    <Content Include="scss\bootstrap\.__tables.scss" />
+    <Content Include="scss\bootstrap\.__tooltip.scss" />
+    <Content Include="scss\bootstrap\.__transitions.scss" />
+    <Content Include="scss\bootstrap\.__type.scss" />
+    <Content Include="scss\bootstrap\.__utilities.scss" />
+    <Content Include="scss\bootstrap\.__variables.scss" />
+    <Content Include="scss\bootstrap\mixins\.__alert.scss" />
+    <Content Include="scss\bootstrap\mixins\.__background-variant.scss" />
+    <Content Include="scss\bootstrap\mixins\.__badge.scss" />
+    <Content Include="scss\bootstrap\mixins\.__border-radius.scss" />
+    <Content Include="scss\bootstrap\mixins\.__box-shadow.scss" />
+    <Content Include="scss\bootstrap\mixins\.__breakpoints.scss" />
+    <Content Include="scss\bootstrap\mixins\.__buttons.scss" />
+    <Content Include="scss\bootstrap\mixins\.__clearfix.scss" />
+    <Content Include="scss\bootstrap\mixins\.__float.scss" />
+    <Content Include="scss\bootstrap\mixins\.__forms.scss" />
+    <Content Include="scss\bootstrap\mixins\.__gradients.scss" />
+    <Content Include="scss\bootstrap\mixins\.__grid-framework.scss" />
+    <Content Include="scss\bootstrap\mixins\.__grid.scss" />
+    <Content Include="scss\bootstrap\mixins\.__hover.scss" />
+    <Content Include="scss\bootstrap\mixins\.__image.scss" />
+    <Content Include="scss\bootstrap\mixins\.__list-group.scss" />
+    <Content Include="scss\bootstrap\mixins\.__lists.scss" />
+    <Content Include="scss\bootstrap\mixins\.__nav-divider.scss" />
+    <Content Include="scss\bootstrap\mixins\.__navbar-align.scss" />
+    <Content Include="scss\bootstrap\mixins\.__pagination.scss" />
+    <Content Include="scss\bootstrap\mixins\.__reset-text.scss" />
+    <Content Include="scss\bootstrap\mixins\.__resize.scss" />
+    <Content Include="scss\bootstrap\mixins\.__screen-reader.scss" />
+    <Content Include="scss\bootstrap\mixins\.__size.scss" />
+    <Content Include="scss\bootstrap\mixins\.__table-row.scss" />
+    <Content Include="scss\bootstrap\mixins\.__text-emphasis.scss" />
+    <Content Include="scss\bootstrap\mixins\.__text-hide.scss" />
+    <Content Include="scss\bootstrap\mixins\.__text-truncate.scss" />
+    <Content Include="scss\bootstrap\mixins\.__transition.scss" />
+    <Content Include="scss\bootstrap\mixins\.__visibility.scss" />
+    <Content Include="scss\bootstrap\utilities\.__align.scss" />
+    <Content Include="scss\bootstrap\utilities\.__background.scss" />
+    <Content Include="scss\bootstrap\utilities\.__borders.scss" />
+    <Content Include="scss\bootstrap\utilities\.__clearfix.scss" />
+    <Content Include="scss\bootstrap\utilities\.__display.scss" />
+    <Content Include="scss\bootstrap\utilities\.__embed.scss" />
+    <Content Include="scss\bootstrap\utilities\.__flex.scss" />
+    <Content Include="scss\bootstrap\utilities\.__float.scss" />
+    <Content Include="scss\bootstrap\utilities\.__position.scss" />
+    <Content Include="scss\bootstrap\utilities\.__screenreaders.scss" />
+    <Content Include="scss\bootstrap\utilities\.__sizing.scss" />
+    <Content Include="scss\bootstrap\utilities\.__spacing.scss" />
+    <Content Include="scss\bootstrap\utilities\.__text.scss" />
+    <Content Include="scss\bootstrap\utilities\.__visibility.scss" />
+    <Content Include="scss\theme\.__elements.scss" />
+    <Content Include="scss\theme\.__flexbox.scss" />
+    <Content Include="scss\theme\.__footer.scss" />
+    <Content Include="scss\theme\.__header.scss" />
+    <Content Include="scss\theme\.__home.scss" />
+    <Content Include="scss\theme\.__mixins.scss" />
+    <Content Include="scss\theme\.__reset.scss" />
+    <Content Include="scss\theme\.__variables.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50410</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8080/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
